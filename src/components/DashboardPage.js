@@ -1,19 +1,16 @@
 import React from 'react';
 import Sidebar from './Sidebar';
+import Feed from './Feed';
 
 const DashboardPage = () => (
-  <div>
-    <div className="app">
-       <h1>Hey clever programmers</h1>
+  <div className="app">
 
         {/* Sidebar */}
         <Sidebar/>
 
         {/* Feed */}
-
+        <Feed/>
         {/* Widgets */}
-
-    </div>
   </div>
 );
 
