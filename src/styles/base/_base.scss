@@ -19,7 +19,7 @@ body {
   display: flex;
   height: 100vh;
   max-width: 1300px;
-  margin-left: auto;
+  margin-left: auto;  /*this will center it */
   margin-right: auto;
   padding: 0 10px;
 }
@@ -39,6 +39,6 @@ button:disabled {
   cursor: default;
 }
 
-.is-active {
+.is-active1 {
   font-weight: bold;
 }
