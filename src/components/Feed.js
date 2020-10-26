@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TweetBox from "./TweetBox";
+import Post from "./Post";
 
 function Feed() { 
 
@@ -10,6 +11,8 @@ function Feed() {
       </div>
 
       <TweetBox />
+
+      <Post />
      
     </div>
   );
