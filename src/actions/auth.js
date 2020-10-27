@@ -16,7 +16,14 @@ export const logout = () => ({
 });
 
 export const startLogout = () => {
-  return () => {
-    return firebase.auth().signOut();
-  };
+  console.log ("signing out");
+  //return () => {
+   // return firebase.auth().signOut();
+   //};
+   return firebase.auth()
+    .signOut()
+    .then(() => {
+      window.location.href = '/login';
+    });
+  
 };

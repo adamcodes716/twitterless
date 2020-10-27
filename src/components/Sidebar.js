@@ -10,12 +10,14 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
-import { Fragment } from "react";
+import { startLogout } from '../actions/auth';
 
 function Sidebar() {
     return (
       <div className="sidebar">
-          <TwitterIcon className="sidebar__twitterIcon" />       
+         
+            
+          <TwitterIcon className="sidebar__twitterIcon" />    
       
           <SidebarOption active Icon={HomeIcon} text="Home" />
           <SidebarOption Icon={SearchIcon} text="Explore" />
@@ -27,9 +29,16 @@ function Sidebar() {
           <SidebarOption Icon={MoreHorizIcon} text="More" />
       
           {/* Button -> Tweet */}
+          {/*
           <Button variant="outlined" className="sidebar__tweet" fullWidth>
           Tweet
         </Button> 
+          */}
+        <br/>
+        <button className="tweetBox__tweetButton" onClick={startLogout}>Logout</button>
+
+        
+
       </div>
     );
   }

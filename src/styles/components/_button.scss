@@ -1,4 +1,4 @@
-.button-old {
+.button {
   background: $blue;
   border: none;
   color: white;
@@ -10,10 +10,10 @@
   text-decoration: none;
 }
 
-.button--link-old {
-  background: none;
+.button--link {
+  background-color: var(--twitter-color) !important;
 }
 
-.button--secondary-old {
+.button--secondary {
   background: #888;
 }
