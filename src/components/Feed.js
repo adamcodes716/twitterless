@@ -21,16 +21,7 @@ function Feed() {
 
       <TweetBox />
 
-      <Post 
-        displayName="Adam Morgan"
-        username="muchgooder"
-        verified={true}
-        avatar="https://lh3.googleusercontent.com/ogw/ADGmqu-0LJEXFN3NMisjzbnyvmPPq2WDEShG58cIPRPd=s32-c-mo"
-        image="https://lh3.googleusercontent.com/ogw/ADGmqu-0LJEXFN3NMisjzbnyvmPPq2WDEShG58cIPRPd=s32-c-mo"
-        text="some text"
-        />
-
-        <FlipMove>
+       <FlipMove>
         {posts.map((post) => (
           <Post
             key={post.text}
