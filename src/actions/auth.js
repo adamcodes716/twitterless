@@ -1,8 +1,8 @@
 import { firebase, googleAuthProvider } from '../firebase/firebase';
 
-export const login = (uid) => ({
+export const login = (uid, email, displayName, photoURL) => ({
   type: 'LOGIN',
-  uid
+  uid, email, displayName, photoURL
 });
 
 export const startLogin = () => {
@@ -23,7 +23,7 @@ export const startLogout = () => {
    return firebase.auth()
     .signOut()
     .then(() => {
-      window.location.href = '/login';
+      window.location.href = '/';
     });
   
 };

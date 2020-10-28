@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Avatar, Button } from "@material-ui/core";
+import { connect } from 'react-redux';
 import database from "../firebase/firebase";
+import { auth } from "firebase";
 
-function TweetBox() {
+function TweetBox(props) {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
@@ -10,12 +12,12 @@ function TweetBox() {
     e.preventDefault();
 
     database.collection("posts").add({
-      displayName: "Adam Morgan",
-      username: "muchgooder",
+      displayName: { displayName },
+      username: { email },
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar: "https://lh3.googleusercontent.com/ogw/ADGmqu-0LJEXFN3NMisjzbnyvmPPq2WDEShG58cIPRPd=s32-c-mo",
+      avatar: {photoURL},
     });
 
     setTweetMessage("");
@@ -26,7 +28,7 @@ function TweetBox() {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src="https://lh3.googleusercontent.com/ogw/ADGmqu-0LJEXFN3NMisjzbnyvmPPq2WDEShG58cIPRPd=s32-c-mo" />
+          <Avatar src={props.photoURL} />
           <input
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}
@@ -54,4 +56,14 @@ function TweetBox() {
   );
 }
 
-export default TweetBox;
+const mapStateToProps = (state) => {
+  console.log("state", state.auth);
+ // return { photoURL : state.auth.photoURL };
+ return {  googleUser  : state.auth,
+          displayName : state.auth.displayName,
+          email: state.auth.displayName, 
+          photoURL : state.auth.photoURL
+           }
+};
+
+export default connect(mapStateToProps) (TweetBox);

@@ -6,8 +6,8 @@ export const LoginPage = ({ startLogin }) => (
   <div className="box-layout">
     <div className="box-layout__box">
       <h1 className="box-layout__title">Twitterless</h1>
-      <p>Tag line for app!</p>
-      <button className="button" onClick={startLogin}>Login with Google</button>
+      <p>Just like twitter, but not!</p>
+      <button className="tweetBox__tweetButton" onClick={startLogin}>Login</button> <br/>
     </div>
   </div>
 );
